@@ -27,7 +27,7 @@ cd libfprint-2-tod1-broadcom
 cd libfprint-2-tod1-broadcom
 install -dm 0755 %{buildroot}%{_udevrulesdir} %{buildroot}%{_libdir}/libfprint-2/tod-1 %{buildroot}%{_sharedstatedir}/fprint/fw/
 install -m 0644 lib/udev/rules.d/60-libfprint-2-device-broadcom.rules %{buildroot}%{_udevrulesdir}/60-libfprint-2-device-broadcom.rules
-install -m 0644 var/lib/fprint/fw/* %{buildroot}%{_sharedstatedir}/fprint/fw/
+install -m 0644 var/lib/fprint/fw/cv3/* %{buildroot}%{_sharedstatedir}/fprint/fw/
 install -m 0755 usr/lib/x86_64-linux-gnu/libfprint-2/tod-1/libfprint-2-tod-1-broadcom.so %{buildroot}%{_libdir}/libfprint-2/tod-1/libfprint-2-tod-1-broadcom.so
 
 %files
@@ -38,7 +38,7 @@ install -m 0755 usr/lib/x86_64-linux-gnu/libfprint-2/tod-1/libfprint-2-tod-1-bro
 
 %changelog
 * Wed Jul 10 2024 Stevie Galluscio <galluscio.stevie@gmail.com> - 0.0.2
-- Support git branch selection
+- Update git branch to jammy for new fw and openssl 3 compatibility from CV3 updates
 
 * Sun Nov 19 2023 Chris Harvey <chris@chrisnharvey.com> - 0.0.1
 - First release
