@@ -1,9 +1,10 @@
 Name:           libfprint-2-tod1-broadcom
-Version:        0.0.1
+Version:        0.0.2
 Release:        2%{?dist}
 Summary:        Broadcom driver module for libfprint-2 for various Dell laptops
 License:        NonFree
 Group:          Hardware/Mobile
+%global branch jammy
 URL:            https://git.launchpad.net/~oem-solutions-engineers/libfprint-2-tod1-broadcom/+git/libfprint-2-tod1-broadcom/
 BuildRequires:  git
 BuildRequires:  pkgconfig(udev)
@@ -17,7 +18,7 @@ Supplements:    modalias(usb:v0A5Cp5845d*dc*dsc*dp*ic*isc*ip*)
 This is user space driver for Broadcom fingerprint module. Proprietary driver for the fingerprint reader on the various Dell laptops - direct from Dell's Ubuntu repo.
 
 %prep
-git clone %{url}
+git clone -b %{branch} %{url}
 cd libfprint-2-tod1-broadcom
 
 %build
@@ -36,5 +37,8 @@ install -m 0755 usr/lib/x86_64-linux-gnu/libfprint-2/tod-1/libfprint-2-tod-1-bro
 %{_sharedstatedir}/fprint/fw/*
 
 %changelog
+* Wed Jul 10 2024 Stevie Galluscio <galluscio.stevie@gmail.com> - 0.0.2
+- Support git branch selection
+
 * Sun Nov 19 2023 Chris Harvey <chris@chrisnharvey.com> - 0.0.1
 - First release
