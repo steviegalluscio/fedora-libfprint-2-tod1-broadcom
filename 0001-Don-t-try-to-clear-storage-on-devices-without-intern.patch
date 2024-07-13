@@ -1,0 +1,27 @@
+From 3633dbaa630d4734f3c63721eecbf935315cb80d Mon Sep 17 00:00:00 2001
+From: Julian <julian@aternos.org>
+Date: Sun, 1 May 2022 00:29:09 +0200
+Subject: [PATCH] Don't try to clear storage on devices without internal
+ storage This change prevents warnings like 'Failed to clear storage before
+ first enrollment: Device has no storage.'.
+
+---
+ src/device.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/device.c b/src/device.c
+index df1e782..b9de3ee 100644
+--- a/src/device.c
++++ b/src/device.c
+@@ -2209,7 +2209,8 @@ fprint_device_enroll_start (FprintDBusDevice      *dbus_dev,
+   priv->enroll_data = finger;
+   priv->current_action = ACTION_ENROLL;
+ 
+-  if (!fp_device_has_feature (priv->dev, FP_DEVICE_FEATURE_STORAGE_LIST) &&
++  if (fp_device_has_feature (priv->dev, FP_DEVICE_FEATURE_STORAGE) &&
++      !fp_device_has_feature (priv->dev, FP_DEVICE_FEATURE_STORAGE_LIST) &&
+       is_first_enrollment (rdev))
+     {
+       g_autoptr(GError) clear_err = NULL;
+-- 
+2.38.1
