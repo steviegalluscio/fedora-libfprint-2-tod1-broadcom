@@ -13,6 +13,10 @@ Supplements:    modalias(usb:v0A5Cp5842d*dc*dsc*dp*ic*isc*ip*)
 Supplements:    modalias(usb:v0A5Cp5843d*dc*dsc*dp*ic*isc*ip*)
 Supplements:    modalias(usb:v0A5Cp5844d*dc*dsc*dp*ic*isc*ip*)
 Supplements:    modalias(usb:v0A5Cp5845d*dc*dsc*dp*ic*isc*ip*)
+Supplements:    modalias(usb:v0A5Cp5864d*dc*dsc*dp*ic*isc*ip*)
+Supplements:    modalias(usb:v0A5Cp5865d*dc*dsc*dp*ic*isc*ip*)
+Supplements:    modalias(usb:v0A5Cp5866d*dc*dsc*dp*ic*isc*ip*)
+Supplements:    modalias(usb:v0A5Cp5867d*dc*dsc*dp*ic*isc*ip*)
 
 %description
 This is user space driver for Broadcom fingerprint module. Proprietary driver for the fingerprint reader on the various Dell laptops - direct from Dell's Ubuntu repo.
