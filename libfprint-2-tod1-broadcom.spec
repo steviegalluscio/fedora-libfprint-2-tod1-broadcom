@@ -41,8 +41,11 @@ install -m 0755 usr/lib/x86_64-linux-gnu/libfprint-2/tod-1/libfprint-2-tod-1-bro
 %files
 %attr(644, -, -) %license libfprint-2-tod1-broadcom/LICENCE.broadcom
 %{_udevrulesdir}/60-libfprint-2-device-broadcom.rules
+%{_udevrulesdir}/60-libfprint-2-device-broadcom-cv3plus.rules
 %{_libdir}/libfprint-2/tod-1/libfprint-2-tod-1-broadcom.so
+%{_libdir}/libfprint-2/tod-1/libfprint-2-tod-1-broadcom-cv3plus.so
 %{_sharedstatedir}/fprint/fw/*
+%{_sharedstatedir}/fprint/.broadcomCv3plusFW/*
 
 %changelog
 * Sat Jul 13 2024 Stevie Galluscio <galluscio.stevie@gmail.com> - 0.0.3
