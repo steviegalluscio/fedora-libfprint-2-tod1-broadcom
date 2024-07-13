@@ -1,6 +1,6 @@
 Name:           libfprint-2-tod1-broadcom
-Version:        0.0.2
-Release:        2%{?dist}
+Version:        0.0.3
+Release:        3%{?dist}
 Summary:        Broadcom driver module for libfprint-2 for various Dell laptops
 License:        NonFree
 Group:          Hardware/Mobile
@@ -27,8 +27,11 @@ cd libfprint-2-tod1-broadcom
 cd libfprint-2-tod1-broadcom
 install -dm 0755 %{buildroot}%{_udevrulesdir} %{buildroot}%{_libdir}/libfprint-2/tod-1 %{buildroot}%{_sharedstatedir}/fprint/fw/
 install -m 0644 lib/udev/rules.d/60-libfprint-2-device-broadcom.rules %{buildroot}%{_udevrulesdir}/60-libfprint-2-device-broadcom.rules
+install -m 0644 lib/udev/rules.d/60-libfprint-2-device-broadcom.rules %{buildroot}%{_udevrulesdir}/60-libfprint-2-device-broadcom-cv3plus.rules
 install -m 0644 var/lib/fprint/fw/cv3/* %{buildroot}%{_sharedstatedir}/fprint/fw/
+install -m 0644 var/lib/fprint/fw/cv3plus/* %{buildroot}%{_sharedstatedir}/fprint/.broadcomCv3plusFW/
 install -m 0755 usr/lib/x86_64-linux-gnu/libfprint-2/tod-1/libfprint-2-tod-1-broadcom.so %{buildroot}%{_libdir}/libfprint-2/tod-1/libfprint-2-tod-1-broadcom.so
+install -m 0755 usr/lib/x86_64-linux-gnu/libfprint-2/tod-1/libfprint-2-tod-1-broadcom.so %{buildroot}%{_libdir}/libfprint-2/tod-1/libfprint-2-tod-1-broadcom-cv3plus.so
 
 %files
 %attr(644, -, -) %license libfprint-2-tod1-broadcom/LICENCE.broadcom
@@ -37,6 +40,9 @@ install -m 0755 usr/lib/x86_64-linux-gnu/libfprint-2/tod-1/libfprint-2-tod-1-bro
 %{_sharedstatedir}/fprint/fw/*
 
 %changelog
+* Sat Jul 13 2024 Stevie Galluscio <galluscio.stevie@gmail.com> - 0.0.3
+- Add more support for CV3plus
+
 * Wed Jul 10 2024 Stevie Galluscio <galluscio.stevie@gmail.com> - 0.0.2
 - Update git branch to jammy for new fw and openssl 3 compatibility from CV3 updates
 
