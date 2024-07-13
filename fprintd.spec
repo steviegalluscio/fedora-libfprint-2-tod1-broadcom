@@ -56,8 +56,6 @@ fingerprint readers access.
 
 %prep
 %autosetup -S git -n %{name}-v%{version}
-# enable copr repository for libfprint-devel v1.94.7+tod1
-dnf copr enable steviegalluscio/libfprint-2-tod1-broadcom -y
 
 %build
 %meson -Dgtk_doc=true -Dpam=true -Dpam_modules_dir=%{_libdir}/security
@@ -99,4 +97,4 @@ fi
 
 %changelog
 * Sat Jul 13 2024 Stevie Galluscio <galluscio.stevie@gmail.com> - 1.94.3
-- Enable copr repository for libfprint-devel v1.94.7+tod1
+- Upgrade to v1.94.3 and remove patch for v1.94.2
