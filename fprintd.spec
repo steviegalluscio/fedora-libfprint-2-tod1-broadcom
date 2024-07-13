@@ -24,8 +24,6 @@ BuildRequires:	pkgconfig(systemd)
 BuildRequires:	python3-dbusmock
 BuildRequires:	python3-libpamtest
 
-Patch0: 0001-Don-t-try-to-clear-storage-on-devices-without-intern.patch
-
 %description
 D-Bus service to access fingerprint readers.
 
