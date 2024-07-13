@@ -30,7 +30,7 @@ cd libfprint-2-tod1-broadcom
 
 %install
 cd libfprint-2-tod1-broadcom
-install -dm 0755 %{buildroot}%{_udevrulesdir} %{buildroot}%{_libdir}/libfprint-2/tod-1 %{buildroot}%{_sharedstatedir}/fprint/fw/
+install -dm 0755 %{buildroot}%{_udevrulesdir} %{buildroot}%{_libdir}/libfprint-2/tod-1 %{buildroot}%{_sharedstatedir}/fprint/fw/ %{buildroot}%{_sharedstatedir}/fprint/.broadcomCv3plusFW/
 install -m 0644 lib/udev/rules.d/60-libfprint-2-device-broadcom.rules %{buildroot}%{_udevrulesdir}/60-libfprint-2-device-broadcom.rules
 install -m 0644 lib/udev/rules.d/60-libfprint-2-device-broadcom.rules %{buildroot}%{_udevrulesdir}/60-libfprint-2-device-broadcom-cv3plus.rules
 install -m 0644 var/lib/fprint/fw/cv3/* %{buildroot}%{_sharedstatedir}/fprint/fw/
