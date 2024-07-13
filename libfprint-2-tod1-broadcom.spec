@@ -9,6 +9,7 @@ URL:            https://git.launchpad.net/~oem-solutions-engineers/libfprint-2-t
 BuildRequires:  git
 BuildRequires:  pkgconfig(udev)
 ExclusiveArch:  x86_64
+Supplements:    modalias(usb:v0A5Cp5840d*dc*dsc*dp*ic*isc*ip*)
 Supplements:    modalias(usb:v0A5Cp5842d*dc*dsc*dp*ic*isc*ip*)
 Supplements:    modalias(usb:v0A5Cp5843d*dc*dsc*dp*ic*isc*ip*)
 Supplements:    modalias(usb:v0A5Cp5844d*dc*dsc*dp*ic*isc*ip*)
