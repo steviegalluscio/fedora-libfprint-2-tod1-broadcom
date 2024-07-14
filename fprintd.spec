@@ -58,7 +58,7 @@ fingerprint readers access.
 %autosetup -S git -n %{name}-v%{version}
 
 %build
-%meson --prefix/usr/local -Dgtk_doc=true -Dpam=true -Dpam_modules_dir=%{_libdir}/security
+%meson --prefix=/usr/local -Dgtk_doc=true -Dpam=true -Dpam_modules_dir=%{_libdir}/security
 %meson_build
 
 %install
