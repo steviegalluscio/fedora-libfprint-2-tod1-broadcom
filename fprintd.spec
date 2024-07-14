@@ -16,7 +16,7 @@ BuildRequires:	git
 BuildRequires:	pam-devel
 BuildRequires:	libfprint-devel >= 1.94.0
 BuildRequires:	polkit-devel
-BuildRequires:	gtk-doc
+#BuildRequires:	gtk-doc
 BuildRequires:	gettext
 BuildRequires:	perl-podlators
 BuildRequires:	pkgconfig(libsystemd)
@@ -106,7 +106,7 @@ fi
 %{_mandir}/man8/pam_fprintd.8.gz
 
 %files devel
-%{_datadir}/gtk-doc/
+#%{_datadir}/gtk-doc/
 %{_datadir}/dbus-1/interfaces/net.reactivated.Fprint.Device.xml
 %{_datadir}/dbus-1/interfaces/net.reactivated.Fprint.Manager.xml
 
