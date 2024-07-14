@@ -65,7 +65,7 @@ fingerprint readers access.
         --sbindir=%{_sbindir} \
         --includedir=%{_exec_prefix}/include \
         --datadir=%{_datadir} \
-        --mandir=%{_exec_prefix}/local/share/man \
+        --mandir=%{_mandir} \
         --infodir=%{_datadir}/info \
         --localedir=%{_exec_prefix}/local/share/locale \
         --sysconfdir=%{_exec_prefix}/local/etc \
@@ -98,12 +98,12 @@ fi
 %{_unitdir}/fprintd.service
 %{_datadir}/polkit-1/actions/net.reactivated.fprint.device.policy
 %attr(0700, -, -) %{_localstatedir}/lib/fprint
-%{_exec_prefix}/local/share/man/man1/fprintd.1.gz
+%{_mandir}/man1/fprintd.1.gz
 
 %files pam
 %doc pam/README
 %{_libdir}/security/pam_fprintd.so
-%{_exec_prefix}/local/share/man/man8/pam_fprintd.8.gz
+%{_mandir}/man8/pam_fprintd.8.gz
 
 %files devel
 %{_datadir}/gtk-doc/
