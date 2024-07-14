@@ -58,7 +58,7 @@ fingerprint readers access.
 %autosetup -S git -n %{name}-v%{version}
 
 %build
-%meson -Dgtk_doc=true -Dpam=true -Dpam_modules_dir=%{_libdir}/security
+%meson --prefix/usr/local -Dgtk_doc=true -Dpam=true -Dpam_modules_dir=%{_libdir}/security
 %meson_build
 
 %install
@@ -98,3 +98,5 @@ fi
 %changelog
 * Sat Jul 13 2024 Stevie Galluscio <galluscio.stevie@gmail.com> - 1.94.3
 - Upgrade to v1.94.3 and remove patch for v1.94.2
+- Change prefix to /usr/local 
+
