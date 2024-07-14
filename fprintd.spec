@@ -71,7 +71,7 @@ fingerprint readers access.
         --sysconfdir=%{_exec_prefix}/local/etc \
         --localstatedir=%{_localstatedir} \
         --sharedstatedir=%{_sharedstatedir} \
-        -Dgtk_doc=true \
+        -Dgtk_doc=false \
         -Dpam=true \
         -Dpam_modules_dir=%{_libdir}/security
 %meson_build
