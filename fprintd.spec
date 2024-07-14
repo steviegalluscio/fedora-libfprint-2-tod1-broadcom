@@ -58,18 +58,19 @@ fingerprint readers access.
 %autosetup -S git -n %{name}-v%{version}
 
 %build
-%meson --prefix=/usr/local \
-        --libdir=/usr/lib64 \
-        --libexecdir=/usr/local/libexec \
-        --bindir=/usr/local/bin --sbindir=/usr/sbin \
-        --includedir=/usr/include \
-        --datadir=/usr/share \
-        --mandir=/usr/local/share/man \
-        --infodir=/usr/share/info \
-        --localedir=/usr/local/share/locale \
-        --sysconfdir=usr/local/etc \
-        --localstatedir=/var \
-        --sharedstatedir=/var/lib \
+%meson --prefix=%{_exec_prefix}/local \
+        --libdir=%{_libdir} \
+        --libexecdir=%{_exec_prefix}/local/libexec \
+        --bindir=%{_exec_prefix}/local/bin \
+        --sbindir=%{_sbindir} \
+        --includedir=%{_exec_prefix}/include \
+        --datadir=%{_datadir} \
+        --mandir=%{_exec_prefix}/local/share/man \
+        --infodir=%{_datadir}/info \
+        --localedir=%{_exec_prefix}/local/share/locale \
+        --sysconfdir=%{_exec_prefix}/local/etc \
+        --localstatedir=%{_localstatedir} \
+        --sharedstatedir=%{_sharedstatedir} \
         -Dgtk_doc=true \
         -Dpam=true \
         -Dpam_modules_dir=%{_libdir}/security
@@ -88,21 +89,21 @@ fi
 
 %files -f %{name}.lang
 %doc README COPYING AUTHORS TODO
-%{_bindir}/fprintd-*
-%{_libexecdir}/fprintd
+%{_exec_prefix}/local/bin/fprintd-*
+%{_exec_prefix}/local/libexec/fprintd
 # FIXME This file should be marked as config when it does something useful
-%{_sysconfdir}/fprintd.conf
+%{_exec_prefix}/local/etc/fprintd.conf
 %{_datadir}/dbus-1/system.d/net.reactivated.Fprint.conf
 %{_datadir}/dbus-1/system-services/net.reactivated.Fprint.service
 %{_unitdir}/fprintd.service
 %{_datadir}/polkit-1/actions/net.reactivated.fprint.device.policy
 %attr(0700, -, -) %{_localstatedir}/lib/fprint
-%{_mandir}/man1/fprintd.1.gz
+%{_exec_prefix}/local/share/man/man1/fprintd.1.gz
 
 %files pam
 %doc pam/README
 %{_libdir}/security/pam_fprintd.so
-%{_mandir}/man8/pam_fprintd.8.gz
+%{_exec_prefix}/local/share/man/man8/pam_fprintd.8.gz
 
 %files devel
 %{_datadir}/gtk-doc/
